@@ -1,0 +1,87 @@
+<div class="quizEdit-main">
+
+        <div class="alert alert-dark" role="alert">
+                Как оформить ссылку на другой тест:
+                <br>текст нужно поместить внутрь <strong> &lt;a class="quiz-in-diagnos" data-quiz-number="73" href="#"&gt; ИМЯ ТЕСТА...&lt;/a&gt;</strong> ,
+                и прописать номер теста у атрибута <strong>data-quiz-number</strong> например: <strong>data-quiz-number="73"</strong>
+                <br>Пример ссылки на другой тест: <strong>&lt;a class="quiz-in-diagnos" data-quiz-number="73" href="#" \&gt;Смотрите схему 73 "Беспокойство".&lt;/a&gt;</strong>
+        </div>
+
+        <div class="alert alert-dark" role="alert">
+            Как добавить в тест ссылку на статью: 
+            <br>для этого нужно добавить текст вида: 
+           <strong> &lt;a href="/showArticle/1"&gt;Просмотр&lt;/a&gt; </strong>
+            где 1 - это номер статьи
+        </div>
+
+        <p class="quizEdit-number"> НОМЕР ТЕСТА: <%=quiz.number%> </p>
+        <p class="quizEdit-name"> 
+            <p>НАЗВАНИЕ ТЕСТА:</p>  
+            <input class="input-quiz-name" type="text" value="<%=quiz.name%>"> 
+
+        </p>
+        
+        <div class="quizEdit-questions">
+            <p>ВОПРОСЫ ТЕСТА:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>НОМЕР</th>
+                        <th>ТЕКСТ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% quiz.questions.forEach((question)=>{ %>
+                            <tr class="quizEdit-question-row">
+                                <td width="5%" class="quizEdit-question-number"><%=question.number %></td>
+                                <td width="95%" class="quizEdit-question-name"> <input class="input-queston-name" type="text" value="<%=question.name %>" > </td>
+                            </tr>
+                    <%})%>
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="quizEdit-diagnoses">
+            <p>ДИАГНОЗЫ ТЕСТА:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>НОМЕР</th>
+                        <th>ТЕКСТ</th>
+                        <th>КЛЮЧ ОТВЕТА</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% quiz.diagnoses.forEach((diagnos)=>{ %>
+                        <tr class="quizEdit-diagnos-row">
+                            <td width="5%" class="quizEdit-diagnos-number"><%=diagnos.number %></td>
+                            <td width="70%" class="quizEdit-diagnos-name"> <textarea   class="input-quizEdit-diagnos-name"  ><%=diagnos.name %></textarea> </td>
+                            <td width="25%" class="quizEdit-diagnos-key"> 
+                                <% diagnos.keys.forEach((k)=>{ %>
+                                    <input class="input-quiz-edit-diagnos-key" type="text" value="<%=k%>"> 
+                               <% }) %>
+
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="quizEdit-recommends">
+            <% if(quiz.recommends){ %>
+                <p>РЕКОМЕНДАЦИИ:</p>
+                <textarea class="quizEdit-input-recommends" ><%=quiz.recommends%></textarea>
+                  
+            <% } %>
+        </div>
+
+        <div class="quiz-edit-buttons">
+            <button type="button" class="quiz-edit-buttons-save btn btn-primary">СОХРАНИТЬ</button>
+        </div>
+        
+    
+    </div>
+
+    
+    <script src="/javascripts/quizEditing/quizEdit.js"></script>

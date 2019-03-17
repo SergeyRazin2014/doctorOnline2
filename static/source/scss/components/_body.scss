@@ -1,0 +1,50 @@
+.quiz-select-main{
+    color:#007BFF;
+    .row{
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+.description-body{
+    h2{
+        text-transform: uppercase;
+        color:#007BFF;
+        font-family: Roboto, 'Times New Roman', Times, serif;
+    }
+    p{
+        color:#17A2B8;
+        font-family: Roboto, 'Times New Roman', Times, serif;
+        line-height: 1.4;
+    }
+}
+
+.body-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.body-main-doctor {
+    width: 33%;
+    img {
+        width: 100%;
+    }
+}
+
+// .body-main-doctor {
+//     width: 33%;
+//     float: right;
+//     margin-right: 15%;
+//     img {
+//         width: 100%;
+//     }
+// }
+
+// .start-quizzing-block {
+//     position: relative;
+//     .start-quizzing-block-btn {
+//         position: absolute;
+//         top: 30%;
+//     }
+// }

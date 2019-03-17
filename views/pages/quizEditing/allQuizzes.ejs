@@ -1,0 +1,22 @@
+<div class="allQuizzes-main">
+    <br>
+    <p>Имя файла следующее: [№ теста].txt, например для теста 11 файл будет называться 11.txt</p>
+    <br>
+    <table class="allQuizzes-main-table">
+
+        <% allQuizzes.forEach((quiz)=>{ %>
+
+        <tr>
+            <td>
+                <%=quiz.number%>
+            </td>
+            <td>
+                <%=quiz.name%>
+            </td>
+            <td> <a href='/quizInfo/<%=quiz.number%>'>Проверить</a></td>
+            <td> <a href="/quizEdit/<%=quiz.number%>">Редактировать</a></td>
+        </tr>
+
+        <%}) %>
+    </table>
+</div>

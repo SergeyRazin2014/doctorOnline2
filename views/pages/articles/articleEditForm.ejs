@@ -1,0 +1,46 @@
+<div class="alert alert-dark" role="alert">
+    Чтобы добавить ссылку на картинку в статье, сначала нужно загрузить картинку, 
+    <br>после чего добавить ссылку на эту картинку в текст статьи
+    <br>например: 
+    <br><strong> &lt;img style="width: 550px" src="/1549188089991.jpg"&gt;</strong>
+</div>
+<br>
+<br>
+
+<div class="container-fluid">
+    <form method="POST" , action="/editArticle">
+
+        <div class="form-group">
+            <label for="articleNumber"><strong>Номер статьи</strong></label>
+            <input type="text" class="form-control" name="articleNumber" id="articleNumber" value="<%= article.number %>"
+                disabled>
+        </div>
+
+        <div class="form-group">
+            <label class="strong" for="articleName"><strong>Наименование статьи</strong></label>
+            <input type="text" class="form-control" name="articleName" id="articleName" placeholder="Введите наименование статьи"
+                value="<%= article.name %>">
+        </div>
+
+        <div class="form-group">
+            <label for="articleText"><strong>Содержание статьи</strong></label>
+            <textarea class="form-control" name="articleText" id="articleText" rows="10" placeholder="Введите содержание статьи"><%= article.text %></textarea>
+        </div>
+
+        <input class="edit-article-submit btn btn-primary" type="submit" value="Сохранить">
+
+    </form>
+    <br>
+    <hr>
+    <form method="POST" enctype="multipart/form-data" id="formUploadImg">
+        <input type="file" name="file" id="file">
+        <input class="upload-button" type="submit" value="Загрузить файл">
+    </form>
+    <p class="img-name">
+
+    </p>
+
+
+</div>
+
+<script src="/javascripts/editArticle/editArticle.js"></script>

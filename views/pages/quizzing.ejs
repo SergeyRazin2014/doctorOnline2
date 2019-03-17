@@ -1,0 +1,13 @@
+<div>
+
+    <!-- в скрытом виде вывожу номера тестов -->
+    <% for(let i = 0;i<quizNumbers.length; i++){ 
+        let item = quizNumbers[i];
+    %>
+    <p class="hidden quizNumber">
+        <%=item %>
+    </p>
+
+    <% } %>
+</div>
+<script src="/javascripts/quizzing/quizzingRun.js"></script>

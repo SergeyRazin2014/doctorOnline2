@@ -1,0 +1,57 @@
+<div class="quizInfo-main">
+    <div>
+        <a class="btn btn-primary" href="/quizEdit/<%=quiz.number%>" role="button">РЕДАКТИРОВАТЬ</a>
+    </div>
+    <p class="quizInfo-number"> НОМЕР ТЕСТА: <%=quiz.number%> </p>
+    <p class="quizInfo-name">НАЗВАНИЕ ТЕСТА: <%=quiz.name%> </p>
+    
+    <div class="quizInfo-questions">
+        <p>ВОПРОСЫ ТЕСТА:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>НОМЕР</th>
+                    <th>ТЕКСТ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% quiz.questions.forEach((question)=>{ %>
+                            <tr>
+                                <td class="quizInfo-question-number"><%=question.number %></td>
+                                <td class="quizInfo-question-name"><%=question.name %></td>
+                            </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="quizInfo-diagnoses">
+        <p>ДИАГНОЗЫ ТЕСТА:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>НОМЕР</th>
+                    <th>ТЕКСТ</th>
+                    <th>КЛЮЧ ОТВЕТА</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% quiz.diagnoses.forEach((diagnos)=>{ %>
+                    <tr>
+                        <td class="quizInfo-diagnos-number"><%=diagnos.number %></td>
+                        <td class="quizInfo-diagnos-name"><%=diagnos.name %></td>
+                        <td class="quizInfo-diagnos-key"><%= diagnos.keys.join(' | ') %>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="quizInfo-recommends">
+        <% if(quiz.recommends){ %>
+            <p>РЕКОМЕНДАЦИИ: <br> <%=quiz.recommends%></p>
+        <% } %>
+    </div>
+
+</div>
+

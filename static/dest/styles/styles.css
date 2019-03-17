@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+textarea,
+input,
+button {
+  outline: none; }
+
+.header {
+  height: 100px; }
+  .header .registration {
+    float: right; }
+  .header .clear {
+    clear: both; }
+  .header .title p {
+    margin: 0 auto;
+    text-align: center;
+    color: mediumblue;
+    font-size: 30px; }
+
+.footer {
+  background-color: #17A2B8;
+  height: 100px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.hidden {
+  display: none !important; }
+
+.allQuizzes-main-table {
+  border-collapse: collapse; }
+
+.allQuizzes-main-table,
+.allQuizzes-main-table th,
+.allQuizzes-main-table td {
+  border: 1px solid black; }
+
+.quizInfo-questions table {
+  border: 1px solid black;
+  border-collapse: collapse; }
+  .quizInfo-questions table tr {
+    border: 1px solid black; }
+    .quizInfo-questions table tr td {
+      border: 1px solid black; }
+    .quizInfo-questions table tr th {
+      border: 1px solid black; }
+
+.quizInfo-diagnoses table {
+  border: 1px solid black;
+  border-collapse: collapse; }
+  .quizInfo-diagnoses table tr {
+    border: 1px solid black; }
+    .quizInfo-diagnoses table tr td {
+      border: 1px solid black; }
+    .quizInfo-diagnoses table tr th {
+      border: 1px solid black; }
+
+.quizEdit-questions table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse; }
+  .quizEdit-questions table tr {
+    border: 1px solid black; }
+    .quizEdit-questions table tr td {
+      border: 1px solid black; }
+    .quizEdit-questions table tr th {
+      border: 1px solid black; }
+
+.quizEdit-diagnoses table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse; }
+  .quizEdit-diagnoses table tr {
+    border: 1px solid black; }
+    .quizEdit-diagnoses table tr td {
+      border: 1px solid black; }
+    .quizEdit-diagnoses table tr th {
+      border: 1px solid black; }
+
+.input-quiz-name, .input-queston-name {
+  width: 100%; }
+
+.input-quizEdit-diagnos-name {
+  width: 100%;
+  height: 100px;
+  display: block;
+  resize: none; }
+
+.quizEdit-input-recommends {
+  border: 1px solid black;
+  width: 100%;
+  height: 300px;
+  display: block;
+  resize: none; }
+
+.input-quiz-edit-diagnos-key {
+  width: 100%; }
+
+.quiz-select-main {
+  color: #007BFF; }
+  .quiz-select-main .row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+
+.description-body h2 {
+  text-transform: uppercase;
+  color: #007BFF;
+  font-family: Roboto, 'Times New Roman', Times, serif; }
+
+.description-body p {
+  color: #17A2B8;
+  font-family: Roboto, 'Times New Roman', Times, serif;
+  line-height: 1.4; }
+
+.body-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.body-main-doctor {
+  width: 33%; }
+  .body-main-doctor img {
+    width: 100%; }

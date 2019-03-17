@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <a href="/getAddArticleForm" class="btn btn-primary btn-lg" role="button">Добавить</a>
+    <br>
+    <br>
+    <table class="table table-bordered">
+
+        <tbody>
+            <% for( let i=0;i < allArticles.length; i++ ){ 
+                let article = allArticles[i];
+
+                %>
+            <tr>
+                <th scope="row">
+                    <%= article.number %>
+                </th>
+                <td>
+                    <%= article.name %>
+                </td>
+                <td><a href="/showArticle/<%=article.number%>">Просмотр</a> </td>
+                <td><a href="/getArticleEditForm/<%=article.number%>">Изменить</a></td>
+                <td><a class="delete-article-btn" data-number="<%=article.number%>" href="/#">Удалить</a></td>
+            </tr>
+            <%}%>
+
+        </tbody>
+    </table>
+</div>
+
+<script src="/javascripts/deleteArticle/deleteArticle.js"></script>

@@ -1,0 +1,29 @@
+<div class="body-main">
+    <div class="start-quizzing-block">
+        <div class="description-body">
+            <h2>Доктор онлайн</h2>
+            <p>
+                Данный сервис поможет Вам разобраться
+                <br />в трудностях связанных с вашим состоянием,
+                <br /> с болезнями ваших детей и ваших близких.
+            </p>
+            <p>
+                Совет дается только после внимательного "разговора",
+                <br /> который проводит с вами диагностическая система.
+                <br /> Ваш вопрос уточняется, и вы получаете ответ.
+            </p>
+        </div>
+        <% if(user) { %>
+        <a href="/selectQuiz" class="start-quizzing-block-btn btn btn-primary btn-lg" role="button">НАЧАТЬ ТЕСТИРОВАНИЕ</a>
+        <% } else { %>
+        <p class="text-info"> <a class="text-danger" href="/registration">Зарегистрируйтесь</a> или <a class="text-danger" href="/login">войдите</a></p>
+        <% } %>
+    </div>
+
+    <div class="body-main-doctor">
+        <img src="/doctor.png" alt="doctor">
+    </div>
+
+</div>
+
+<div class="clearfix"></div>
