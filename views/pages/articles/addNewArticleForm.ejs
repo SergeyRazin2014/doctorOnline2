@@ -1,3 +1,12 @@
+<div class="alert alert-dark" role="alert">
+    Чтобы добавить ссылку на картинку в статье, сначала нужно загрузить картинку, 
+    <br>после чего добавить ссылку на эту картинку в текст статьи
+    <br>например: 
+    <br><strong> &lt;img style="width: 550px" src="/1549188089991.jpg"&gt;</strong>
+</div>
+<br>
+<br>
+
 <div class="container-fluid">
     <form method="POST", action="/addNewArticle">
         <div class="form-group">
@@ -12,3 +21,14 @@
 
     </form>
 </div>
+
+<br>
+<hr>
+<form method="POST" enctype="multipart/form-data" id="formUploadImg">
+    <input type="file" name="file" id="file">
+    <input class="upload-button" type="submit" value="Загрузить файл">
+</form>
+<p class="img-name">
+</p>
+
+<script src="/javascripts/common/imgUploader.js"></script>

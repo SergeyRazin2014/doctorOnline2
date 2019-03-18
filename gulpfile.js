@@ -63,11 +63,17 @@ gulp.task('deleteArticle', () => {
     gulp.src([
         'static/source/js/articles/deleteArticle/*.js',
     ]).pipe(concat('deleteArticle.js'))
-    .pipe(gulp.dest('static/dest/javascripts/deleteArticle/'))
+        .pipe(gulp.dest('static/dest/javascripts/deleteArticle/'))
+})
+
+gulp.task('imgUploader', () => {
+    console.log('**********imgUploader.js****************');
+    gulp.src(['static/source/js/common/imgUploader.js'])
+        .pipe(gulp.dest('static/dest/javascripts/common'))
 })
 
 //DEFAULT
-gulp.task('default', ['scss', 'selectQuiz', 'quizEdit', 'runQuiz', 'eidtArticle','deleteArticle'], () => {
+gulp.task('default', ['scss', 'selectQuiz', 'quizEdit', 'runQuiz', 'eidtArticle', 'deleteArticle', 'imgUploader' ], () => {
     console.log('******************default********************');
     gulp.watch('static/source/scss/**/*.scss', ['scss']);
     gulp.watch('static/source/js/quizzing/**/*.js', ['selectQuiz']);
@@ -75,4 +81,5 @@ gulp.task('default', ['scss', 'selectQuiz', 'quizEdit', 'runQuiz', 'eidtArticle'
     gulp.watch('static/source/js/quizzingRun/**/*.js', ['runQuiz']);
     gulp.watch('static/source/js/articles/editArticle/*.js', ['eidtArticle']);
     gulp.watch('static/source/js/articles/deleteArticle/*.js', ['deleteArticle']);
+    gulp.watch('static/source/js/common/*.js',['imgUploader']);
 })

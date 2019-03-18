@@ -16,8 +16,6 @@ jQuery(document).ready(function () {
 
         if (areYouShure) {
 
-            debugger;
-
             let number = this.dataset.number;
 
             new DeleteArticleLoader().deleteArticle(number)
