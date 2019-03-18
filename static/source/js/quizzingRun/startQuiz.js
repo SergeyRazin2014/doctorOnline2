@@ -161,10 +161,11 @@ class StartQuiz {
         $(`.quiz-query-diagnos-${this.quiz.number}`).append(diagnosText);
 
         $('.quiz-in-diagnos').click((event) => {
+
             event.stopImmediatePropagation();
             event.preventDefault();
 
-            let diagnosQuizNumber = $('.quiz-in-diagnos').data('quizNumber');
+            let diagnosQuizNumber = event.target.dataset.quizNumber;
 
             $(`.start-quiz-info-${diagnosQuizNumber}`).html('');
 
