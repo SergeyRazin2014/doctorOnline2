@@ -22,6 +22,13 @@ const fs = require('fs');
 const parsers = require('./parsers');
 const fileHelper = require('./helpers/fileHelper');
 
+//--------------☻
+const crypto = require('crypto');
+const GridFsStorage = require('multer-gridfs-storage');
+const Grid = require('gridfs-stream');
+const methodOverride = require('method-override');
+//--------------
+
 
 //установка конфигурации приложения=======================================================
 
@@ -51,11 +58,20 @@ app.use(session({
 //установить ejs - как движек приложения
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
+
+
+
+// let gfs;
+// mongoose.connection.once('open', () => {
+//     gfs = Grid(mongoose.connection.db, mongoose.mongo);
+//     gfs.collection('uploads');
+// });
+
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true });
 app.use(loadUser); //устанавливаем юзера из сессии в респонс чтобы user был доступен всем ejs шаблонам
 
 //установка роутов=========================================================================
-app.use(require('./app/routes')) 
+app.use(require('./app/routes'))
 
 
 

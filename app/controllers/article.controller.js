@@ -92,8 +92,6 @@ module.exports = {
         res.json({ message: `статья ${number} удалена` });
     },
 
-
-
     uploadArticleImg: function (req, res) {
 
         uploader.upload(req, res, err => {
@@ -113,6 +111,10 @@ module.exports = {
                 imgName: req.file.filename
             });
         });
+    },
+
+    getImg: async function (req, res) {
+        await uploader.getImgByName(req, res);
     }
 
 

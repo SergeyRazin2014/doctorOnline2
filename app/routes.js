@@ -64,3 +64,5 @@ router.post('/editArticle', articleController.editArticle);
 router.delete('/deleteArticle', articleController.deleteArticle);
 
 router.post('/uploadArticleImg',articleController.uploadArticleImg);
+
+router.get('/getImg/:imgName', auth, articleController.getImg);
