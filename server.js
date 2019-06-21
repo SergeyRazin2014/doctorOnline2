@@ -22,7 +22,7 @@ const fs = require('fs');
 const parsers = require('./parsers');
 const fileHelper = require('./helpers/fileHelper');
 
-//--------------☻
+//--------------
 const crypto = require('crypto');
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');

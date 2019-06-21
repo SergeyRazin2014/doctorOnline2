@@ -9,21 +9,6 @@ module.exports = {
         res.render('pages/articles/allArticles', { allArticles });
     },
 
-    //☻
-    getArticle: function (req, res) {
-
-        let articleNumber = req.params['articleNumber'];
-
-        //☻
-        let article = {
-            name: 'Имя тестовой статьи',
-            number: 1,
-            text: 'lorem @media для создания брейкпойнтов контента и интерфейсов. Эти брейкпойнты в основном сделаны на минимальных широтах зоны просмотра и позволяют масштабировать элементы по мере изменения размера зоны просмотра.',
-        }
-
-        return res.render('pages/articles/article.ejs', { article });
-    },
-
     showArticle: async function (req, res) {
         let articleNumber = req.params['articleNumber'];
 
@@ -70,18 +55,24 @@ module.exports = {
 
     editArticle: async function (req, res) {
 
-        //todo: сохранить измененную статью
-        //отправить на клиента что все хорошо
+        try {
+            //todo: сохранить измененную статью
+            //отправить на клиента что все хорошо
 
-        let number = req.body.number;
-        let name = req.body.name;
-        let text = req.body.text;
+            let number = req.body.number;
+            let name = req.body.name;
+            let text = req.body.text;
 
-        let article = { number, name, text };
+            let article = { number, name, text };
 
-        let result = await models.Article.findOneAndUpdate({ number: number }, article);
+            let result = await models.Article.findOneAndUpdate({ number: number }, article);
 
-        res.json(result);
+            res.json(result);
+        } catch (err) {
+            console.error(err);
+            res.json(err);
+        }
+
     },
 
     deleteArticle: async function (req, res) {
@@ -92,25 +83,29 @@ module.exports = {
         res.json({ message: `статья ${number} удалена` });
     },
 
-    uploadArticleImg: function (req, res) {
-
-        uploader.upload(req, res, err => {
-            let error = '';
-            if (err) {
-                if (err.code === 'LIMIT_FILE_SIZE') {
-                    error = 'Картинка не более 6mb!';
+    uploadArticleImg: async function (req, res) {
+        try {
+            await uploader.upload(req, res, err => {
+                let error = '';
+                if (err) {
+                    if (err.code === 'LIMIT_FILE_SIZE') {
+                        error = 'Картинка не более 6mb!';
+                    }
+                    if (err.code === 'EXTENTION') {
+                        error = 'Только jpeg и png!';
+                    }
                 }
-                if (err.code === 'EXTENTION') {
-                    error = 'Только jpeg и png!';
-                }
-            }
 
-            res.json({
-                ok: !error,
-                error,
-                imgName: req.file.filename
+                res.json({
+                    ok: !error,
+                    error,
+                    imgName: req.file ? req.file.filename : error
+                });
             });
-        });
+        } catch (err) {
+            console.error(err);
+            res.json(err);
+        }
     },
 
     getImg: async function (req, res) {

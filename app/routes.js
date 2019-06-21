@@ -49,8 +49,6 @@ router.get('/adminPage', auth, mainController.showAdminPage);
 
 router.get('/showAllArticles', auth, articleController.showAllArticles);
 
-router.get('/getArticle/:articleNumber', auth, articleController.getArticle);
-
 router.get('/showArticle/:articleNumber', auth, articleController.showArticle);
 
 router.get('/getAddArticleForm', auth, articleController.getAddArticleForm);
